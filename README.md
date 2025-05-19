@@ -29,7 +29,6 @@ This tool allows you to:
   - Sentiment distribution charts (pie charts and bar graphs)
   - Word clouds for different sentiment categories
   - Confidence score distribution visualization
-  - Time-based sentiment trends
   
 - **Data Processing**:
   - Text cleaning and preprocessing
