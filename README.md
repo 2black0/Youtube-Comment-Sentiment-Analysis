@@ -1,7 +1,7 @@
 # YouTube Sentiment Analysis for Indonesian Comments
 
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/youtube-sentiment)
-![License](https://img.shields.io/github/license/yourusername/youtube-sentiment)
+![GitHub last commit](https://img.shields.io/github/last-commit/2black0/Youtube-Comment-Sentiment-Analysis)
+![License](https://img.shields.io/github/license/2black0/Youtube-Comment-Sentiment-Analysis)
 
 A project for analyzing sentiment in Indonesian YouTube comments. This project provides an end-to-end workflow from comment extraction to sentiment analysis and visualization, specifically optimized for Indonesian language content.
 
