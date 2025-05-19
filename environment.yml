@@ -1,0 +1,24 @@
+name: youtube-sentiment
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - jupyterlab
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - nltk
+  - ipywidgets
+  - pip:
+    - PySastrawi
+    - youtube-comment-downloader
+    - google-api-python-client
+    - tqdm
+    - transformers
+    - torch
+    - torchvision
+    - torchaudio
+    - wordcloud
