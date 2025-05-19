@@ -3,7 +3,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/youtube-sentiment)
 ![License](https://img.shields.io/github/license/yourusername/youtube-sentiment)
 
-A comprehensive tool for analyzing sentiment in Indonesian YouTube comments. This project provides an end-to-end workflow from comment extraction to sentiment analysis and visualization, specifically optimized for Indonesian language content.
+A project for analyzing sentiment in Indonesian YouTube comments. This project provides an end-to-end workflow from comment extraction to sentiment analysis and visualization, specifically optimized for Indonesian language content.
 
 ## 📋 Overview
 
@@ -60,7 +60,7 @@ youtube-sentiment/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/youtube-sentiment.git
+   git clone https://github.com/2black0/Youtube-Comment-Sentiment-Analysis.git
    cd youtube-sentiment
    ```
 
