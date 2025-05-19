@@ -1,54 +1,89 @@
-# YouTube Sentiment Analysis for Indonesian Comments
+# 🇮🇩 YouTube Sentiment Analysis for Indonesian Comments
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/2black0/Youtube-Comment-Sentiment-Analysis)
 ![License](https://img.shields.io/github/license/2black0/Youtube-Comment-Sentiment-Analysis)
 
-A tool for analyzing sentiment in Indonesian YouTube comments. This project provides a workflow from comment extraction to sentiment analysis and visualization.
+A tool for analyzing sentiment in Indonesian YouTube comments. This project provides a workflow from comment extraction to sentiment analysis and visualization, with a focus on Indonesian language processing.
 
 ## 📌 Overview
 
 This tool allows you to:
 
-1. 🎥 Extract comments from YouTube videos using just the video ID
-2. 🧠 Analyze sentiment using NLP models for Indonesian language
-3. 📊 Generate visualizations of the results
+1. Extract comments from YouTube videos using just the video ID
+2. Analyze sentiment using NLP models specifically trained for Indonesian language
+3. Generate comprehensive visualizations of the sentiment analysis results
 
 ## 📋 Features
 
-- **📥 YouTube Comment Extraction**:
-  - 🕵️♂️ Scraper Mode: No API key required, uses youtube-comment-downloader
-  - 🔑 API Mode: Uses YouTube Data API v3 (requires Google API key)
-  - 🔄 Sort options: popularity or recency
+- **YouTube Comment Extraction**:
+  - Scraper Mode: No API key required, uses youtube-comment-downloader
+  - API Mode: Uses YouTube Data API v3 (requires Google API key)
+  - Sort options: popularity or recency
   
-- **🧪 Sentiment Analysis**:
-  - 🤖 Uses Indonesian RoBERTa model for sentiment detection
-  - 🏷️ Classification: Positive, Neutral, Negative
-  - 📈 Includes confidence scores
+- **Sentiment Analysis**:
+  - Uses Indonesian RoBERTa model for sentiment detection
+  - Classification: Positive, Neutral, Negative
+  - Includes confidence scores
   
-- **📊 Visualization**:
-  - 📉 Sentiment distribution charts
-  - ⏳ Time-based trends
-  - ☁️ Word clouds
-  - 🎨 Basic customization options
+- **Visualization**:
+  - Sentiment distribution charts (pie charts and bar graphs)
+  - Word clouds for different sentiment categories
+  - Confidence score distribution visualization
+  - Time-based sentiment trends
   
-- **🧹 Data Processing**:
-  - ✨ Text cleaning and preprocessing
-  - 📅 Date parsing
-  - 💾 CSV output format
+- **Data Processing**:
+  - Text cleaning and preprocessing
+  - Date parsing
+  - CSV output format
+
+## 📊 Visualization Results
+
+### Sentiment Distribution
+![Sentiment Distribution](/image/sentioment-distribution.png)
+*Figure 1: Distribution of sentiment categories across YouTube comments*
+
+### Confidence Score Distribution
+![Confidence Score Distribution](/image/distribution-confidence-score.png)
+*Figure 2: Distribution of confidence scores for sentiment classifications*
+
+### Word Clouds
+
+#### All Comments
+![Word Cloud - All Comments](/image/word-cloud-all.png)
+*Figure 3: Word cloud visualization of all analyzed comments*
+
+#### Positive Comments
+![Word Cloud - Positive Comments](/image/word-cloud-postive.png)
+*Figure 4: Word cloud visualization of comments classified as positive*
+
+#### Neutral Comments
+![Word Cloud - Neutral Comments](/image/word-cloud-neutral.png)
+*Figure 5: Word cloud visualization of comments classified as neutral*
+
+#### Negative Comments
+![Word Cloud - Negative Comments](/image/word-cloud-negative.png)
+*Figure 6: Word cloud visualization of comments classified as negative*
 
 ## 🗂️ Project Structure
 
 ```plaintext
 youtube-sentiment/
-├── data/                     # 📁 CSV files with comments and analysis
+├── data/                     # CSV files with comments and analysis
 │   └── youtube_comments_<VIDEO_ID>.csv
-├── notebooks/                # 📓 Jupyter notebooks
+├── image/                    # Visualization output images
+│   ├── sentioment-distribution.png
+│   ├── distribution-confidence-score.png
+│   ├── word-cloud-all.png
+│   ├── word-cloud-positive.png
+│   ├── word-cloud-neutral.png
+│   └── word-cloud-negative.png
+├── notebooks/                # Jupyter notebooks
 │   └── YouTube_Sentiment_Analysis_Workflow.ipynb
-├── src/                      # 💻 Source code
+├── src/                      # Source code
 │   └── youtube_comments_fetcher.py
-├── environment.yml           # 🐍 Conda environment specification
-├── LICENSE                   # ⚖️ MIT License
-└── README.md                 # 📖 Project documentation
+├── environment.yml           # Conda environment specification
+├── LICENSE                   # MIT License
+└── README.md                 # Project documentation
 ```
 
 ## 🛠️ Installation
@@ -59,14 +94,14 @@ youtube-sentiment/
 
 ### Setup Instructions
 
-1. **📥 Clone the repository**:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/2black0/Youtube-Comment-Sentiment-Analysis.git
    cd Youtube-Comment-Sentiment-Analysis
    ```
 
-2. **🐍 Set up the environment using Conda** (recommended):
+2. **Set up the environment using Conda** (recommended):
 
    ```bash
    conda env create -f environment.yml
@@ -79,7 +114,7 @@ youtube-sentiment/
    pip install -r requirements.txt  # Note: Create this from environment.yml if needed
    ```
 
-3. **📚 Download NLTK resources**:
+3. **Download NLTK resources**:
 
    ```bash
    python -c "import nltk; nltk.download('stopwords')"
@@ -87,7 +122,7 @@ youtube-sentiment/
 
 ## 🚀 Usage Guide
 
-### Step 1: ⬇️ Download YouTube Comments
+### Step 1: Download YouTube Comments
 
 ```bash
 python src/youtube_comments_fetcher.py VIDEO_ID [options]
@@ -102,18 +137,18 @@ python src/youtube_comments_fetcher.py VIDEO_ID [options]
 **Examples**:
 
 ```bash
-# 💡 Using scraper mode (no API key needed)
+# Using scraper mode (no API key needed)
 python src/youtube_comments_fetcher.py SzXMacu80o8 --max 500
 
-# 💡 Using API mode (requires Google API key)
+# Using API mode (requires Google API key)
 python src/youtube_comments_fetcher.py SzXMacu80o8 --mode api --api_key YOUR_API_KEY --max 1000
 ```
 
 The command will create a CSV file in the `data` directory: `youtube_comments_<VIDEO_ID>.csv`
 
-### Step 2: 📊 Run Sentiment Analysis
+### Step 2: Run Sentiment Analysis
 
-🚀 Launch Jupyter Lab or Notebook:
+Launch Jupyter Lab or Notebook:
 
 ```bash
 jupyter lab
@@ -125,48 +160,48 @@ Open and run the notebook: `notebooks/YouTube_Sentiment_Analysis_Workflow.ipynb`
 
 The notebook will:
 
-1. 📂 Load your comments data
-2. 🧠 Run sentiment analysis using pre-trained models
-3. 📈 Generate visualizations
-4. 💾 Save results back to your CSV file
+1. Load your comments data
+2. Run sentiment analysis using pre-trained models
+3. Generate visualizations
+4. Save results back to your CSV file
 
 ## 📊 Understanding the Results
 
 The sentiment model classifies comments into three categories:
 
-| Label      | Emoji | Meaning | Description |
-|------------|-------|---------|-------------|
-| `LABEL_0` | 😊 | Positive | The comment expresses positive sentiment |
-| `LABEL_1` | 😐 | Neutral | The comment is neutral or factual |
-| `LABEL_2` | 😞 | Negative | The comment expresses negative sentiment |
+| Label      | Meaning | Description |
+|------------|---------|-------------|
+| `LABEL_0`  | Positive | The comment expresses positive sentiment |
+| `LABEL_1`  | Neutral | The comment is neutral or factual |
+| `LABEL_2`  | Negative | The comment expresses negative sentiment |
 
 Each analysis includes:
 
-- 🏷️ Sentiment label
-- 🔢 Confidence score (0-1)
-- ⏱️ Timestamp of analysis
+- Sentiment label
+- Confidence score (0-1)
+- Timestamp of analysis
 
 ## 💾 Output Format
 
 The CSV output contains the following columns:
 
-| Column                | Emoji | Description |
-|-----------------------|-------|-------------|
-| `video_id`            | 📹 | YouTube video ID |
-| `author`              | 👤 | Comment author username |
-| `published`           | 📅 | Comment publication timestamp |
-| `text`                | 📝 | Raw comment text |
-| `clean_text`          | 🧼 | Preprocessed comment text |
-| `sentiment_label`     | 🏷️ | Sentiment classification result |
-| `sentiment_score`     | 🔢 | Confidence score of the classification |
-| `sentiment_analysis_at` | ⏱️ | Timestamp of analysis |
-| `extracted_at`        | ⏲️ | Timestamp of comment extraction |
+| Column                | Description |
+|-----------------------|-------------|
+| `video_id`            | YouTube video ID |
+| `author`              | Comment author username |
+| `published`           | Comment publication timestamp |
+| `text`                | Raw comment text |
+| `clean_text`          | Preprocessed comment text |
+| `sentiment_label`     | Sentiment classification result |
+| `sentiment_score`     | Confidence score of the classification |
+| `sentiment_analysis_at` | Timestamp of analysis |
+| `extracted_at`        | Timestamp of comment extraction |
 
 ## 🔧 Technical Details
 
 ### 🤖 Models
 
-The sentiment analysis uses [`w11wo/indonesian-roberta-base-sentiment-classifier`](https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier), a RoBERTa model for Indonesian sentiment analysis.
+The sentiment analysis uses [`w11wo/indonesian-roberta-base-sentiment-classifier`](https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier), a RoBERTa model fine-tuned for Indonesian sentiment analysis.
 
 ### 📦 Dependencies
 
@@ -177,8 +212,8 @@ Main dependencies include:
 - `transformers` & `torch`: For sentiment analysis
 - `pandas`: For data processing
 - `matplotlib` & `seaborn`: For visualization
-- `nltk` & `PySastrawi`: For text processing
-- `wordcloud`: For word clouds
+- `nltk`: For text processing
+- `wordcloud`: For word cloud generation
 
 See `environment.yml` for the complete list.
 
@@ -186,11 +221,11 @@ See `environment.yml` for the complete list.
 
 Contributions are welcome! To contribute:
 
-1. 🍴 Fork the repository
-2. 🌿 Create a branch: `git checkout -b feature/your-feature`
-3. 💾 Commit changes: `git commit -am 'Add your feature'`
-4. 🚀 Push to the branch: `git push origin feature/your-feature`
-5. 📮 Submit a pull request
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -am 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request
 
 ## ⚖️ License
 
@@ -202,4 +237,4 @@ For questions or suggestions, please open an issue in this repository.
 
 ---
 
-🇮🇩 Created for Indonesian language NLP research
+Created for Indonesian language NLP research - Last updated: May 2025
